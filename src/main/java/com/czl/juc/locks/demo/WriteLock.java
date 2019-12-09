@@ -22,6 +22,7 @@ public class WriteLock implements Runnable {
     @Override
     public void run() {
         try {
+            //lock.writeLock().lockInterruptibly();
             lock.writeLock().lock();
             log.info(Thread.currentThread().getName() + "-lock.writeLock().lock()");
             log.info("写锁是独占的。。。");
