@@ -1,13 +1,13 @@
-package com.czl.lock;
+package com.czl;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LockApplication {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(LockApplication.class, args);
+        SpringApplication.run(Application.class, args);
         System.out.println("end");
     }
 

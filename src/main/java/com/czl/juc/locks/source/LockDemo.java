@@ -1,4 +1,4 @@
-package com.czl.lock;
+package com.czl.juc.locks.source;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -17,6 +17,10 @@ public class LockDemo {
     public static void main(String[] args) {
         log.info("main(String[] args)-start");
     }
+
+    /**
+     *
+     */
 
 }
 
