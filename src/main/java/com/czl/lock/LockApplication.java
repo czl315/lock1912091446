@@ -1,4 +1,4 @@
-package com.czl.demo;
+package com.czl.lock;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,6 +8,7 @@ public class LockApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(LockApplication.class, args);
+        System.out.println("end");
     }
 
 }
