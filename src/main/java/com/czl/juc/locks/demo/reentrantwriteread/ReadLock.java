@@ -1,4 +1,4 @@
-package com.czl.juc.locks.demo;
+package com.czl.juc.locks.demo.reentrantwriteread;
 
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import lombok.extern.slf4j.Slf4j;

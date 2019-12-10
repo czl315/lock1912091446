@@ -1,4 +1,4 @@
-package com.czl.juc.locks.demo;
+package com.czl.juc.locks.demo.reentrantwriteread;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
  * @Time 14:17
  */
 @Slf4j
-public class ReentrantReadWriteLockDemo {
+public class TestReentrantReadWriteLock {
 
     public static void main(String[] args) {
         ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
