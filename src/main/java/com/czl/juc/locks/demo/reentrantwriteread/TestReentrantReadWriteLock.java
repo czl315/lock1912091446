@@ -20,14 +20,27 @@ public class TestReentrantReadWriteLock {
         //WriteLock(lock);
 
         //读锁测试
-        //ReadLock(lock);
+        ReadLock(lock);
+
+        ReadAndWrite(lock);
 
         //尝试锁
         //writeLockTryLock(lock);
 
         //尝试锁（带有等待时间）
-        writeLockTryLockTimeOut(lock, 1, TimeUnit.SECONDS);
+        //writeLockTryLockTimeOut(lock, 1, TimeUnit.SECONDS);
 
+    }
+
+    /**
+     * 读写共存
+     * @param lock
+     */
+    private static void ReadAndWrite(ReentrantReadWriteLock lock) {
+        //锁测试
+        for (int i = 0; i < 5; i++) {
+            //new Thread(new WriteLockTryLockTime(lock, time, timeUnit)).start();
+        }
     }
 
     /**
