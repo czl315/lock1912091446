@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author one3c-chenzhilong9
- * @Description: TODO()
+ * @Description:
  * @Date 2019/12/9
  * @Time 15:08
  */
@@ -25,6 +25,7 @@ public class WriteLock implements Runnable {
             //lock.writeLock().lockInterruptibly();
             lock.writeLock().lock();
             log.info(Thread.currentThread().getName() + "-lock.writeLock().lock()");
+            Thread.sleep(1000);
             log.info("写锁是独占的。。。");
         } catch (Exception e) {
             e.printStackTrace();

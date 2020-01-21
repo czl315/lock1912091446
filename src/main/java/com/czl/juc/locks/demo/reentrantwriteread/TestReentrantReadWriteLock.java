@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author one3c-chenzhilong9
- * @Description: TODO()
+ * @Description:
  * @Date 2019/12/6
  * @Time 14:17
  */
@@ -17,12 +17,12 @@ public class TestReentrantReadWriteLock {
         ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
 
         //写锁测试
-        //WriteLock(lock);
+        WriteLock(lock,5);
 
         //读锁测试
-        ReadLock(lock);
+        //ReadLock(lock,5);
 
-        ReadAndWrite(lock);
+        //ReadAndWrite(lock,5);
 
         //尝试锁
         //writeLockTryLock(lock);
@@ -35,11 +35,12 @@ public class TestReentrantReadWriteLock {
     /**
      * 读写共存
      * @param lock
+     * @param count
      */
-    private static void ReadAndWrite(ReentrantReadWriteLock lock) {
+    private static void ReadAndWrite(ReentrantReadWriteLock lock, int count) {
         //锁测试
-        for (int i = 0; i < 5; i++) {
-            //new Thread(new WriteLockTryLockTime(lock, time, timeUnit)).start();
+        for (int i = 0; i < count; i++) {
+            new Thread(new WriteLockTryLockTime(lock, 2, TimeUnit.SECONDS)).start();
         }
     }
 
@@ -59,10 +60,11 @@ public class TestReentrantReadWriteLock {
      * 写锁
      *
      * @param lock
+     * @param count
      */
-    static void WriteLock(ReentrantReadWriteLock lock) {
+    static void WriteLock(ReentrantReadWriteLock lock, int count) {
         //写锁测试
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < count; i++) {
             new Thread(new WriteLock(lock)).start();
         }
     }
@@ -71,10 +73,11 @@ public class TestReentrantReadWriteLock {
      * 读锁
      *
      * @param lock
+     * @param count
      */
-    static void ReadLock(ReentrantReadWriteLock lock) {
+    static void ReadLock(ReentrantReadWriteLock lock, int count) {
         //读锁测试
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < count; i++) {
             new Thread(new ReadLock(lock)).start();
         }
     }
